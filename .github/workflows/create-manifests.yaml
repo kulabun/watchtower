@@ -51,18 +51,18 @@ jobs:
       - name: Create Docker manifests for dev
         if: ${{ inputs.build-type == 'dev' }}
         run: |
-          docker buildx imagetools create -t nickfedor/watchtower:latest-dev \
-            nickfedor/watchtower:amd64-dev \
-            nickfedor/watchtower:i386-dev \
-            nickfedor/watchtower:armhf-dev \
-            nickfedor/watchtower:arm64v8-dev \
-            nickfedor/watchtower:riscv64-dev
-          docker buildx imagetools create -t ghcr.io/nicholas-fedor/watchtower:latest-dev \
-            ghcr.io/nicholas-fedor/watchtower:amd64-dev \
-            ghcr.io/nicholas-fedor/watchtower:i386-dev \
-            ghcr.io/nicholas-fedor/watchtower:armhf-dev \
-            ghcr.io/nicholas-fedor/watchtower:arm64v8-dev \
-            ghcr.io/nicholas-fedor/watchtower:riscv64-dev
+          docker buildx imagetools create -t kulabun/watchtower:latest-dev \
+            kulabun/watchtower:amd64-dev \
+            kulabun/watchtower:i386-dev \
+            kulabun/watchtower:armhf-dev \
+            kulabun/watchtower:arm64v8-dev \
+            kulabun/watchtower:riscv64-dev
+          docker buildx imagetools create -t ghcr.io/kulabun/watchtower:latest-dev \
+            ghcr.io/kulabun/watchtower:amd64-dev \
+            ghcr.io/kulabun/watchtower:i386-dev \
+            ghcr.io/kulabun/watchtower:armhf-dev \
+            ghcr.io/kulabun/watchtower:arm64v8-dev \
+            ghcr.io/kulabun/watchtower:riscv64-dev
 
       - name: Create Docker manifests for prod
         if: ${{ inputs.build-type == 'prod' }}
@@ -72,51 +72,51 @@ jobs:
           VERSION="${VERSION#v}"
           MAJOR=$(echo "$VERSION" | cut -d. --fields=1)
           MINOR=$(echo "$VERSION" | cut -d. --fields=1,2)
-          docker buildx imagetools create -t "nickfedor/watchtower:${VERSION}" \
-            "nickfedor/watchtower:amd64-${VERSION}" \
-            "nickfedor/watchtower:i386-${VERSION}" \
-            "nickfedor/watchtower:armhf-${VERSION}" \
-            "nickfedor/watchtower:arm64v8-${VERSION}" \
-            "nickfedor/watchtower:riscv64-${VERSION}"
-          docker buildx imagetools create -t "nickfedor/watchtower:${MINOR}" \
-            "nickfedor/watchtower:amd64-${MINOR}" \
-            "nickfedor/watchtower:i386-${MINOR}" \
-            "nickfedor/watchtower:armhf-${MINOR}" \
-            "nickfedor/watchtower:arm64v8-${MINOR}" \
-            "nickfedor/watchtower:riscv64-${MINOR}"
-          docker buildx imagetools create -t "nickfedor/watchtower:${MAJOR}" \
-            "nickfedor/watchtower:amd64-${MAJOR}" \
-            "nickfedor/watchtower:i386-${MAJOR}" \
-            "nickfedor/watchtower:armhf-${MAJOR}" \
-            "nickfedor/watchtower:arm64v8-${MAJOR}" \
-            "nickfedor/watchtower:riscv64-${MAJOR}"
-          docker buildx imagetools create -t "nickfedor/watchtower:latest" \
-            "nickfedor/watchtower:amd64-latest" \
-            "nickfedor/watchtower:i386-latest" \
-            "nickfedor/watchtower:armhf-latest" \
-            "nickfedor/watchtower:arm64v8-latest" \
-            "nickfedor/watchtower:riscv64-latest"
-          docker buildx imagetools create -t "ghcr.io/nicholas-fedor/watchtower:${VERSION}" \
-            "ghcr.io/nicholas-fedor/watchtower:amd64-${VERSION}" \
-            "ghcr.io/nicholas-fedor/watchtower:i386-${VERSION}" \
-            "ghcr.io/nicholas-fedor/watchtower:armhf-${VERSION}" \
-            "ghcr.io/nicholas-fedor/watchtower:arm64v8-${VERSION}" \
-            "ghcr.io/nicholas-fedor/watchtower:riscv64-${VERSION}"
-          docker buildx imagetools create -t "ghcr.io/nicholas-fedor/watchtower:${MINOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:amd64-${MINOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:i386-${MINOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:armhf-${MINOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:arm64v8-${MINOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:riscv64-${MINOR}"
-          docker buildx imagetools create -t "ghcr.io/nicholas-fedor/watchtower:${MAJOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:amd64-${MAJOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:i386-${MAJOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:armhf-${MAJOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:arm64v8-${MAJOR}" \
-            "ghcr.io/nicholas-fedor/watchtower:riscv64-${MAJOR}"
-          docker buildx imagetools create -t "ghcr.io/nicholas-fedor/watchtower:latest" \
-            "ghcr.io/nicholas-fedor/watchtower:amd64-latest" \
-            "ghcr.io/nicholas-fedor/watchtower:i386-latest" \
-            "ghcr.io/nicholas-fedor/watchtower:armhf-latest" \
-            "ghcr.io/nicholas-fedor/watchtower:arm64v8-latest" \
-            "ghcr.io/nicholas-fedor/watchtower:riscv64-latest"
+          docker buildx imagetools create -t "kulabun/watchtower:${VERSION}" \
+            "kulabun/watchtower:amd64-${VERSION}" \
+            "kulabun/watchtower:i386-${VERSION}" \
+            "kulabun/watchtower:armhf-${VERSION}" \
+            "kulabun/watchtower:arm64v8-${VERSION}" \
+            "kulabun/watchtower:riscv64-${VERSION}"
+          docker buildx imagetools create -t "kulabun/watchtower:${MINOR}" \
+            "kulabun/watchtower:amd64-${MINOR}" \
+            "kulabun/watchtower:i386-${MINOR}" \
+            "kulabun/watchtower:armhf-${MINOR}" \
+            "kulabun/watchtower:arm64v8-${MINOR}" \
+            "kulabun/watchtower:riscv64-${MINOR}"
+          docker buildx imagetools create -t "kulabun/watchtower:${MAJOR}" \
+            "kulabun/watchtower:amd64-${MAJOR}" \
+            "kulabun/watchtower:i386-${MAJOR}" \
+            "kulabun/watchtower:armhf-${MAJOR}" \
+            "kulabun/watchtower:arm64v8-${MAJOR}" \
+            "kulabun/watchtower:riscv64-${MAJOR}"
+          docker buildx imagetools create -t "kulabun/watchtower:latest" \
+            "kulabun/watchtower:amd64-latest" \
+            "kulabun/watchtower:i386-latest" \
+            "kulabun/watchtower:armhf-latest" \
+            "kulabun/watchtower:arm64v8-latest" \
+            "kulabun/watchtower:riscv64-latest"
+          docker buildx imagetools create -t "ghcr.io/kulabun/watchtower:${VERSION}" \
+            "ghcr.io/kulabun/watchtower:amd64-${VERSION}" \
+            "ghcr.io/kulabun/watchtower:i386-${VERSION}" \
+            "ghcr.io/kulabun/watchtower:armhf-${VERSION}" \
+            "ghcr.io/kulabun/watchtower:arm64v8-${VERSION}" \
+            "ghcr.io/kulabun/watchtower:riscv64-${VERSION}"
+          docker buildx imagetools create -t "ghcr.io/kulabun/watchtower:${MINOR}" \
+            "ghcr.io/kulabun/watchtower:amd64-${MINOR}" \
+            "ghcr.io/kulabun/watchtower:i386-${MINOR}" \
+            "ghcr.io/kulabun/watchtower:armhf-${MINOR}" \
+            "ghcr.io/kulabun/watchtower:arm64v8-${MINOR}" \
+            "ghcr.io/kulabun/watchtower:riscv64-${MINOR}"
+          docker buildx imagetools create -t "ghcr.io/kulabun/watchtower:${MAJOR}" \
+            "ghcr.io/kulabun/watchtower:amd64-${MAJOR}" \
+            "ghcr.io/kulabun/watchtower:i386-${MAJOR}" \
+            "ghcr.io/kulabun/watchtower:armhf-${MAJOR}" \
+            "ghcr.io/kulabun/watchtower:arm64v8-${MAJOR}" \
+            "ghcr.io/kulabun/watchtower:riscv64-${MAJOR}"
+          docker buildx imagetools create -t "ghcr.io/kulabun/watchtower:latest" \
+            "ghcr.io/kulabun/watchtower:amd64-latest" \
+            "ghcr.io/kulabun/watchtower:i386-latest" \
+            "ghcr.io/kulabun/watchtower:armhf-latest" \
+            "ghcr.io/kulabun/watchtower:arm64v8-latest" \
+            "ghcr.io/kulabun/watchtower:riscv64-latest"
