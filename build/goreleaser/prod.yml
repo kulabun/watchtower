@@ -179,10 +179,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:amd64-{{ .Major }}
-      - kulabun/watchtower:amd64-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:amd64-{{ .Version }}
-      - kulabun/watchtower:amd64-latest
       - ghcr.io/kulabun/watchtower:amd64-{{ .Major }}
       - ghcr.io/kulabun/watchtower:amd64-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:amd64-{{ .Version }}
@@ -202,6 +198,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally sets Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -236,10 +233,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:i386-{{ .Major }}
-      - kulabun/watchtower:i386-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:i386-{{ .Version }}
-      - kulabun/watchtower:i386-latest
       - ghcr.io/kulabun/watchtower:i386-{{ .Major }}
       - ghcr.io/kulabun/watchtower:i386-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:i386-{{ .Version }}
@@ -259,6 +252,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -297,10 +291,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:armhf-{{ .Major }}
-      - kulabun/watchtower:armhf-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:armhf-{{ .Version }}
-      - kulabun/watchtower:armhf-latest
       - ghcr.io/kulabun/watchtower:armhf-{{ .Major }}
       - ghcr.io/kulabun/watchtower:armhf-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:armhf-{{ .Version }}
@@ -320,6 +310,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -357,10 +348,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:arm64v8-{{ .Major }}
-      - kulabun/watchtower:arm64v8-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:arm64v8-{{ .Version }}
-      - kulabun/watchtower:arm64v8-latest
       - ghcr.io/kulabun/watchtower:arm64v8-{{ .Major }}
       - ghcr.io/kulabun/watchtower:arm64v8-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:arm64v8-{{ .Version }}
@@ -380,6 +367,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -415,10 +403,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:riscv64-{{ .Major }}
-      - kulabun/watchtower:riscv64-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:riscv64-{{ .Version }}
-      - kulabun/watchtower:riscv64-latest
       - ghcr.io/kulabun/watchtower:riscv64-{{ .Major }}
       - ghcr.io/kulabun/watchtower:riscv64-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:riscv64-{{ .Version }}
@@ -438,6 +422,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.

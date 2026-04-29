@@ -133,8 +133,7 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:amd64-dev
-      - ghcr.io/kulabun/watchtower:amd64-dev
+      - ghcr.io/kulabun/watchtower:amd64-latest
 
     # Path to the Dockerfile (from the project root).
     # Templates: allowed.
@@ -150,6 +149,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -184,8 +184,7 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:i386-dev
-      - ghcr.io/kulabun/watchtower:i386-dev
+      - ghcr.io/kulabun/watchtower:i386-latest
 
     # Path to the Dockerfile (from the project root).
     # Templates: allowed.
@@ -201,6 +200,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -239,8 +239,7 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:armhf-dev
-      - ghcr.io/kulabun/watchtower:armhf-dev
+      - ghcr.io/kulabun/watchtower:armhf-latest
 
     # Path to the Dockerfile (from the project root).
     # Templates: allowed.
@@ -256,6 +255,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -293,8 +293,7 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:arm64v8-dev
-      - ghcr.io/kulabun/watchtower:arm64v8-dev
+      - ghcr.io/kulabun/watchtower:arm64v8-latest
 
     # Path to the Dockerfile (from the project root).
     # Templates: allowed.
@@ -310,6 +309,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
@@ -345,8 +345,7 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:riscv64-dev
-      - ghcr.io/kulabun/watchtower:riscv64-dev
+      - ghcr.io/kulabun/watchtower:riscv64-latest
 
     # Path to the Dockerfile (from the project root).
     # Templates: allowed.
@@ -362,6 +361,7 @@ dockers:
     # Docker build flags.
     # Templates: allowed.
     build_flag_templates:
+      - "--network=host"
       # Conditionally set Docker Buildx output to local (type=docker) if DRY_RUN=true, otherwise pushes to a registry (type=registry).
       - '--output={{ if eq .Env.DRY_RUN "true" }}type=docker{{ else }}type=registry{{ end }}'
       # Enables maximum provenance attestation for the Docker Buildx build, generating detailed build metadata for supply chain security.
