@@ -179,10 +179,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:amd64-{{ .Major }}
-      - kulabun/watchtower:amd64-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:amd64-{{ .Version }}
-      - kulabun/watchtower:amd64-latest
       - ghcr.io/kulabun/watchtower:amd64-{{ .Major }}
       - ghcr.io/kulabun/watchtower:amd64-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:amd64-{{ .Version }}
@@ -236,10 +232,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:i386-{{ .Major }}
-      - kulabun/watchtower:i386-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:i386-{{ .Version }}
-      - kulabun/watchtower:i386-latest
       - ghcr.io/kulabun/watchtower:i386-{{ .Major }}
       - ghcr.io/kulabun/watchtower:i386-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:i386-{{ .Version }}
@@ -297,10 +289,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:armhf-{{ .Major }}
-      - kulabun/watchtower:armhf-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:armhf-{{ .Version }}
-      - kulabun/watchtower:armhf-latest
       - ghcr.io/kulabun/watchtower:armhf-{{ .Major }}
       - ghcr.io/kulabun/watchtower:armhf-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:armhf-{{ .Version }}
@@ -357,10 +345,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:arm64v8-{{ .Major }}
-      - kulabun/watchtower:arm64v8-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:arm64v8-{{ .Version }}
-      - kulabun/watchtower:arm64v8-latest
       - ghcr.io/kulabun/watchtower:arm64v8-{{ .Major }}
       - ghcr.io/kulabun/watchtower:arm64v8-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:arm64v8-{{ .Version }}
@@ -415,10 +399,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:riscv64-{{ .Major }}
-      - kulabun/watchtower:riscv64-{{ .Major }}.{{ .Minor }}
-      - kulabun/watchtower:riscv64-{{ .Version }}
-      - kulabun/watchtower:riscv64-latest
       - ghcr.io/kulabun/watchtower:riscv64-{{ .Major }}
       - ghcr.io/kulabun/watchtower:riscv64-{{ .Major }}.{{ .Minor }}
       - ghcr.io/kulabun/watchtower:riscv64-{{ .Version }}

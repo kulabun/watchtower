@@ -133,7 +133,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:amd64-dev
       - ghcr.io/kulabun/watchtower:amd64-dev
 
     # Path to the Dockerfile (from the project root).
@@ -184,7 +183,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:i386-dev
       - ghcr.io/kulabun/watchtower:i386-dev
 
     # Path to the Dockerfile (from the project root).
@@ -239,7 +237,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:armhf-dev
       - ghcr.io/kulabun/watchtower:armhf-dev
 
     # Path to the Dockerfile (from the project root).
@@ -293,7 +290,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:arm64v8-dev
       - ghcr.io/kulabun/watchtower:arm64v8-dev
 
     # Path to the Dockerfile (from the project root).
@@ -345,7 +341,6 @@ dockers:
     # Templates of the Docker image names.
     # Templates: allowed.
     image_templates:
-      - kulabun/watchtower:riscv64-dev
       - ghcr.io/kulabun/watchtower:riscv64-dev
 
     # Path to the Dockerfile (from the project root).
